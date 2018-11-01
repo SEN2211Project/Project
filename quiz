@@ -1,0 +1,43 @@
+public void swapEt(int data, int position) {
+		Node node = new Node(); //yeni node
+		node.data = item;
+		node.nextNode = null;
+ 
+		if(isEmpty()) { //eğer boşsa atla isempty booelan  
+			return;
+		} else if(this.head == null && position == 0) { 
+			this.head = node;
+		}
+ 
+		if(position == 0) {
+			node.nextNode = this.head;
+			this.head = node;
+		}
+ 
+		Node current = this.head;
+		Node previous = null;
+		int i = 0;
+ 
+		while(i < position) { // swaplanmak istenen pozisyona kadar loop et
+			previous = current;
+			current = current.nextNode;
+			if(current == null)
+				break;
+			i++;
+		}
+ 
+		node.nextNode = current; /aradaki bağlantı
+		previous.nextNode = node; //loopu kur
+    
+   
+   	public void yazdır() {
+		if (this.head == null) {
+			return;
+		}
+		//print all nodes
+		Node tempNode = this.head;
+		while (tempNode != null) {
+			System.out.print(tempNode.data + "  ");
+			tempNode = tempNode.nextNode;
+		}
+	}
